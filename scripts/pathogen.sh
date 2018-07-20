@@ -12,3 +12,5 @@ git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
 git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 git clone https://github.com/tomasiser/vim-code-dark.git ~/.vim/bundle/vim-code-dark.git
+git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx
+
