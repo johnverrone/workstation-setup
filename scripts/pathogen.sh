@@ -14,5 +14,6 @@ git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 git clone https://github.com/tomasiser/vim-code-dark.git ~/.vim/bundle/vim-code-dark.git
 git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx
 git clone https://github.com/posva/vim-vue.git ~/.vim/bundle/vim-vue
+git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim
 
 
