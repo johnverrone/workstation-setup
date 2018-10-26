@@ -7,8 +7,9 @@ echo "setting zsh as default shell"
 chsh -s /bin/zsh
 
 echo "configuring prezto-contrib"
-cd $ZPREZTODIR
-git clone https://github.com/belak/prezto-contrib contrib
-cd contrib
+
+git clone https://github.com/belak/prezto-contrib ~/.zprezto/contrib
+cd ~/.zprezto/contrib
 git submodule init
 git submodule update
+cd ~/dev/workstation-setup
