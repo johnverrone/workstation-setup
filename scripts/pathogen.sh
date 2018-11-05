@@ -17,5 +17,6 @@ git clone https://github.com/posva/vim-vue.git ~/.vim/bundle/vim-vue
 git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim
 git clone https://github.com/qpkorr/vim-bufkill ~/.vim/bundle/vim-bufkill
 git clone https://github.com/prettier/vim-prettier ~/.vim/bundle/vim-prettier
+git clone https://github.com/ap/vim-buftabline.git ~/.vim/bundle/vim-buftabline
 
 
