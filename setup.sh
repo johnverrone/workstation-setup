@@ -16,8 +16,8 @@ source ${MY_DIR}/scripts/homebrew.sh
 source ${MY_DIR}/scripts/git.sh
 
 source ${MY_DIR}/scripts/prezto.sh
+source ${MY_DIR}/scripts/vim.sh
 
-source ${MY_DIR}/scripts/pathogen.sh
 source ${MY_DIR}/scripts/tmux.sh
 source ${MY_DIR}/scripts/dotfiles.sh
 source ${MY_DIR}/scripts/iterm-setup.sh
