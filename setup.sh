@@ -10,6 +10,9 @@ clear
 
 MY_DIR="$(dirname "$0")"
 
+# Setup Homebrew
+source ${MY_DIR}/scripts/homebrew.sh
+
 source ${MY_DIR}/scripts/prezto-config.sh
 source ${MY_DIR}/scripts/pathogen.sh
 source ${MY_DIR}/scripts/tmux.sh
