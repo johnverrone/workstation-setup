@@ -19,9 +19,6 @@ source ${MY_DIR}/scripts/zsh.sh
 source ${MY_DIR}/scripts/vim.sh
 source ${MY_DIR}/scripts/tmux.sh
 
-echo "Setting zsh as default shell..."
-chsh -s /bin/zsh
-
 # Install common applications
 source ${MY_DIR}/scripts/applications-common.sh
 
