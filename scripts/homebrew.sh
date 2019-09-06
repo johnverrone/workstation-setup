@@ -23,5 +23,5 @@ echo
 echo "Upgrading existing brews..."
 brew upgrade
 
-echo "Clearning up your Homebrew installation..."
+echo "Cleaning up your Homebrew installation..."
 brew cleanup

@@ -10,14 +10,23 @@ clear
 
 MY_DIR="$(dirname "$0")"
 
-# Setup Homebrew
+# Setup Homebrew and Git for rest of scripts
 source ${MY_DIR}/scripts/homebrew.sh
-
 source ${MY_DIR}/scripts/git.sh
 
-source ${MY_DIR}/scripts/prezto.sh
+# Configure shell (zprezto, vim, tmux)
+source ${MY_DIR}/scripts/zsh.sh
 source ${MY_DIR}/scripts/vim.sh
-
 source ${MY_DIR}/scripts/tmux.sh
+
+echo "Setting zsh as default shell..."
+chsh -s /bin/zsh
+
+# Install common applications
+source ${MY_DIR}/scripts/applications-common.sh
+
+# Configure applications
+source ${MY_DIR}/scripts/configurations.sh
+
+# Finally, pull custom dotfiles
 source ${MY_DIR}/scripts/dotfiles.sh
-source ${MY_DIR}/scripts/iterm-setup.sh
