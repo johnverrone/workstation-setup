@@ -6,38 +6,38 @@ echo "Installing applications"
 
 # Utilities
 
-brew cask install spectacle
-brew cask install postman
+brew install --cask spectacle
+brew install --cask postman
 brew install jq
 
 # Terminals
 
-brew cask install iterm2
+brew install --cask iterm2
 
 # Browsers
 
-brew cask install google-chrome
+brew install --cask google-chrome
 
 # Communication
 
-brew cask install slack
+brew install --cask slack
 
 # Text Editors
 
-brew cask install macdown
-brew cask install sublime-text
-brew cask install visual-studio-code
+# brew install --cask macdown
+# brew install --cask sublime-text
+# brew install --cask visual-studio-code
 
 # Development
 
-brew cask install docker
+brew install --cask docker
 echo "To get docker command-line tools, run the docker application"
 
 brew install go
-brew cask install java
 
 # Node (via nvm)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+mkdir -p $HOME/.nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 nvm install node
 
 
