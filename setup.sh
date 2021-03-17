@@ -14,13 +14,13 @@ MY_DIR="$(dirname "$0")"
 source ${MY_DIR}/scripts/homebrew.sh
 source ${MY_DIR}/scripts/git.sh
 
+# Install common applications
+source ${MY_DIR}/scripts/applications-common.sh
+
 # Configure shell (zprezto, vim, tmux)
 source ${MY_DIR}/scripts/zsh.sh
 source ${MY_DIR}/scripts/vim.sh
 source ${MY_DIR}/scripts/tmux.sh
-
-# Install common applications
-source ${MY_DIR}/scripts/applications-common.sh
 
 # Configure applications
 source ${MY_DIR}/scripts/configurations.sh

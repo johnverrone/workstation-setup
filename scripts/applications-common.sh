@@ -32,6 +32,7 @@ brew install --cask slack
 
 brew install --cask docker
 echo "To get docker command-line tools, run the docker application"
+brew install tmux
 
 brew install go
 
