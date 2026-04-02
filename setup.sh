@@ -10,20 +10,24 @@ clear
 
 MY_DIR="$(dirname "$0")"
 
-# Setup Homebrew and Git for rest of scripts
+# Setup Homebrew
 source ${MY_DIR}/scripts/homebrew.sh
-source ${MY_DIR}/scripts/git.sh
 
-# Install common applications
-source ${MY_DIR}/scripts/applications-common.sh
+# Pull custom dotfiles (before brew bundle, since Brewfile lives in $HOME)
+source ${MY_DIR}/scripts/dotfiles.sh
 
-# Configure shell (zprezto, vim, tmux)
+# Install everything from Brewfile
+source ${MY_DIR}/scripts/brew-bundle.sh
+
+# Configure shell (zprezto, tmux)
 source ${MY_DIR}/scripts/zsh.sh
-source ${MY_DIR}/scripts/vim.sh
 source ${MY_DIR}/scripts/tmux.sh
 
-# Configure applications
-source ${MY_DIR}/scripts/configurations.sh
+# Configure git (user info — aliases come from dotfiles)
+source ${MY_DIR}/scripts/git.sh
 
-# Finally, pull custom dotfiles
-source ${MY_DIR}/scripts/dotfiles.sh
+# Apply macOS preferences
+source ${MY_DIR}/scripts/macos-defaults.sh
+
+echo
+echo "Done! Some changes require a logout/restart to take effect."
