@@ -2,6 +2,8 @@
 
 Automated setup for a fresh macOS machine. One script to go from a clean install to a fully configured development environment.
 
+![Terminal setup](assets/fresh.png)
+
 ## Quick Start
 
 ```bash
