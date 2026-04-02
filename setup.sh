@@ -10,6 +10,9 @@ clear
 
 MY_DIR="$(dirname "$0")"
 
+# Ensure Xcode Command Line Tools are installed (provides git, clang, etc.)
+source ${MY_DIR}/scripts/xcode-clt.sh
+
 # Setup Homebrew
 source ${MY_DIR}/scripts/homebrew.sh
 
@@ -18,6 +21,9 @@ source ${MY_DIR}/scripts/dotfiles.sh
 
 # Install everything from Brewfile
 source ${MY_DIR}/scripts/brew-bundle.sh
+
+# Install NVM and Node
+source ${MY_DIR}/scripts/nvm.sh
 
 # Configure shell (zprezto, tmux)
 source ${MY_DIR}/scripts/zsh.sh

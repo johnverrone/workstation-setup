@@ -10,19 +10,27 @@ cd ~/dev/workstation-setup
 ./setup.sh
 ```
 
+> On a fresh Mac, running `git` for the first time will prompt you to install Xcode Command Line Tools. Accept the prompt, wait for it to finish, then run the clone command again.
+
 The script will prompt for your sudo password upfront, then for your git name and email partway through. Everything else is automatic.
 
 ## What It Does
 
 The setup runs these steps in order:
 
-### 1. Homebrew (`scripts/homebrew.sh`)
+### 1. Xcode Command Line Tools (`scripts/xcode-clt.sh`)
 
-Installs [Homebrew](https://brew.sh) if not present, then updates and upgrades existing packages.
+Ensures Xcode CLT is installed, which provides `git`, `clang`, and other build essentials. If not present, triggers the install and waits for it to complete.
 
-### 2. Dotfiles (`scripts/dotfiles.sh`)
+### 2. Homebrew (`scripts/homebrew.sh`)
 
-Clones [johnverrone/dotfiles](https://github.com/johnverrone/dotfiles) as a bare repo to `~/.cfg` and checks out config files into `$HOME`. This provides:
+Installs [Homebrew](https://brew.sh) if not present and adds it to PATH for the current session. Then updates and upgrades existing packages.
+
+### 3. Dotfiles (`scripts/dotfiles.sh`)
+
+Clones [johnverrone/dotfiles](https://github.com/johnverrone/dotfiles) as a bare repo to `~/.cfg` and checks out config files into `$HOME`. Any conflicting files (e.g. the default `.zshrc`) are backed up to `~/.dotfiles-backup/` before checkout.
+
+This provides:
 
 - **Shell** — `.zshrc`, `.zshenv`, `.zprofile`, `.zpreztorc`, `.zlogin`, `.zlogout`
 - **Neovim** — Full LazyVim configuration in `.config/nvim/`
@@ -35,7 +43,7 @@ Clones [johnverrone/dotfiles](https://github.com/johnverrone/dotfiles) as a bare
 
 After setup, manage dotfiles with the `config` alias (e.g. `config add`, `config commit`, `config push`).
 
-### 3. Brew Bundle (`scripts/brew-bundle.sh`)
+### 4. Brew Bundle (`scripts/brew-bundle.sh`)
 
 Installs everything declared in `~/.Brewfile`:
 
@@ -45,19 +53,23 @@ Installs everything declared in `~/.Brewfile`:
 
 **Fonts** — Caskaydia Cove, Hack, Iosevka, Maple Mono (all Nerd Font variants)
 
-### 4. Zsh (`scripts/zsh.sh`)
+### 5. NVM (`scripts/nvm.sh`)
+
+Installs [NVM](https://github.com/nvm-sh/nvm) (Node Version Manager) and the latest LTS version of Node.js. NVM is lazy-loaded in `.zshrc` so it doesn't slow down shell startup.
+
+### 6. Zsh (`scripts/zsh.sh`)
 
 Installs [Prezto](https://github.com/sorin-ionescu/prezto) (zsh framework) and sets zsh as the default shell.
 
-### 5. Tmux (`scripts/tmux.sh`)
+### 7. Tmux (`scripts/tmux.sh`)
 
 Installs [TPM](https://github.com/tmux-plugins/tpm) (Tmux Plugin Manager). After setup, open tmux and press `prefix + I` to install plugins.
 
-### 6. Git (`scripts/git.sh`)
+### 8. Git (`scripts/git.sh`)
 
 Prompts for your name and email, then sets them as `git config --global`. Aliases and other settings are already provided by the dotfiles `~/.gitconfig_base` (included via `~/.gitconfig`).
 
-### 7. macOS Defaults (`scripts/macos-defaults.sh`)
+### 9. macOS Defaults (`scripts/macos-defaults.sh`)
 
 Applies system preferences:
 
@@ -70,7 +82,6 @@ Applies system preferences:
 A few things that need manual attention after the script finishes:
 
 - **Tmux plugins** — Open tmux and press `prefix + I` to install plugins (resurrect, yank, catppuccin)
-- **NVM** — Install a Node version: `nvm install --lts`
 - **Neovim** — Open nvim and let LazyVim install plugins automatically on first launch
 - **Raycast** — Import settings/extensions manually
 - **SSH key** — Generate a new key: `ssh-keygen -t ed25519`
